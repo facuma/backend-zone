@@ -4,7 +4,7 @@ const User = require('../models/User');
 const router = express.Router();
 const Joi = require('joi');
 
-const SECRET_KEY = process.env.SECRET_KEY || 'your-secret-key';
+const SECRET_KEY = process.env.SECRET_KEY;
 
 // Esquema de validación para login y registro
 const userSchema = Joi.object({
