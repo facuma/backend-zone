@@ -9,12 +9,13 @@ const authenticate = require('./routes/middleware/authMiddleware');
 const app = express();
 
 // Middlewares
-app.use(
-  cors({
-    origin: process.env.FRONTEND_URL || '*', // URL del frontend
-    credentials: true, // Si necesitas cookies o cabeceras específicas
-  })
-);
+
+
+app.use(cors({
+  origin: process.env.FRONTEND_URL || 'http://localhost:3000',
+  credentials: true, // Permitir credenciales si son necesarias
+}));
+
 app.use(express.json());
 
 // Conexión a MongoDB
